@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGoogle</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div class="header">
+        <div class="images-link">
+            <button type="button" onclick="searchImages()">Images</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <img src="mygoogle.png" alt="Google Logo">
+        </div>
+        <div class="search-bar">
+            <form id="searchForm" action="https://www.google.com/search" method="GET">
+                <input type="text" name="q" placeholder="Search Google" id="searchInput">
+                <div class="buttons">
+                    <button type="submit">Google Search</button>
+                    <button type="submit" formaction="https://www.google.com/search" formmethod="GET" name="btnI">I'm Feeling Lucky</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <script>
+        function searchImages() {
+        const input = document.getElementById('searchInput').value;
+            let url = 'https://www.google.com/imghp';
+
+            if (input.trim() !== '') {
+                url = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(input)}`;
+            }
+
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
